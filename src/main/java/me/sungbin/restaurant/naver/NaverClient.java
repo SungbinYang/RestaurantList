@@ -55,7 +55,7 @@ public class NaverClient {
         return responseEntity.getBody();
     }
 
-    public SearchImageRes searchImage(SearchImageReq searchImageReq) {
+    public SearchLocalRes searchImage(SearchImageReq searchImageReq) {
         var uri = UriComponentsBuilder.fromUriString(naverImageSearchUrl)
                 .queryParams(searchImageReq.toMultiValueMap())
                 .build()
@@ -68,7 +68,7 @@ public class NaverClient {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         var httpEntity = new HttpEntity<>(headers);
-        var responseType = new ParameterizedTypeReference<SearchImageRes>(){};
+        var responseType = new ParameterizedTypeReference<SearchLocalRes>(){};
 
         var responseEntity = new RestTemplate().exchange(
                 uri,
