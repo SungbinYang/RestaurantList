@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import me.sungbin.restaurant.db.MemoryDbEntity;
 
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Data
@@ -12,12 +13,16 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class WishListEntity extends MemoryDbEntity {
 
+    @NotBlank
     private String title; // 음식명
 
+    @NotBlank
     private String category; // 카테고리
 
+    @NotBlank
     private String address; // 주소
 
+    @NotBlank
     private String roadAddress; // 도로명 주소
 
     private String homePageLink; // 홈페이지 주소

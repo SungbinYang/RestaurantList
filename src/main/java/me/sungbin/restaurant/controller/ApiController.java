@@ -6,6 +6,7 @@ import me.sungbin.restaurant.wishlist.dto.WishListDto;
 import me.sungbin.restaurant.wishlist.service.WishListService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Slf4j
@@ -22,14 +23,14 @@ public class ApiController {
     }
 
     @PostMapping("")
-    public WishListDto add(@RequestBody WishListDto wishListDto) {
+    public WishListDto add(@Valid @RequestBody WishListDto wishListDto) {
         log.info("{}", wishListDto);
 
         return wishListService.add(wishListDto);
     }
 
     @GetMapping("/all")
-    public List<WishListDto> findAll() {
+    public List<@Valid WishListDto> findAll() {
         return wishListService.findAll();
     }
 

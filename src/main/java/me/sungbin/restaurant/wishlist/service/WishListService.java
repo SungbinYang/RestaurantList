@@ -9,6 +9,7 @@ import me.sungbin.restaurant.wishlist.entity.WishListEntity;
 import me.sungbin.restaurant.wishlist.repository.WishListRepository;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,7 +64,7 @@ public class WishListService {
         return entityToDto(saveEntity);
     }
 
-    private WishListEntity dtoToEntity(WishListDto wishListDto) {
+    private @Valid WishListEntity dtoToEntity(WishListDto wishListDto) {
         var entity = new WishListEntity();
 
         entity.setIndex(wishListDto.getIndex());

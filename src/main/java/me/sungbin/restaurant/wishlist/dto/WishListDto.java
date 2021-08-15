@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Data
@@ -13,12 +14,16 @@ public class WishListDto {
 
     private Integer index;
 
+    @NotNull
     private String title; // 음식명
 
+    @NotNull
     private String category; // 카테고리
 
+    @NotNull
     private String address; // 주소
 
+    @NotNull
     private String roadAddress; // 도로명 주소
 
     private String homePageLink; // 홈페이지 주소
